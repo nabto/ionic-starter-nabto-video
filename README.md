@@ -1,24 +1,28 @@
-# Ionic Starter for Nabto IoT / AppMyProduct
+# Ionic Starter for Nabto IoT / AppMyProduct Video Apps
 
-This [Ionic](http://ionicframework.com) Starter is the first [AppMyProduct](https://www.appmyproduct.com) sample app. It contains everything to build a production ready IoT app to remote control your own product:
+This [Ionic](http://ionicframework.com) Starter demonstrates how to use [AppMyProduct](https://www.appmyproduct.com) for building a video player app. It contains everything to build a production ready IoT app to remote control your own product:
 
 * Device management through local discovery and bookmarks for later access
 * RSA fingerprint based pairing of local devices with app for secure remote access
 * On-device access control and user management (self-contained, no need for any central configuration)
-* Example page for heating control to demonstrate actual device interaction - can be replaced with specific remote control for your IoT scenario
+* Example page for a video player 
 * Takes full benefit of the Nabto framework to ensure secure, high performance remote access
 
+Note that the player in this first version is extremely simple and is only capable of showing MJPG
+streams, suitable for a simple webcam like described in [this
+tutorial](http://www.instructables.com/id/Raspberry-Pi-remote-webcam/).
+
+You can try a pre-built version of the app for iOS and Android, search for "AppMyProduct Video".
+
 <p align="center">
-<img border="1" src="images/overview_framed.png">
-<img border="1" src="images/control_framed.png">
-<img border="1" src="images/acl_framed.png">
+<img border="1" src="images/overview.png">
+<img border="1" src="images/player.png">
+<img border="1" src="images/acl.png">
 </p>
 
-The product specific customization takes place through `./src/pages/vendor-heating`, use this as the starting point for adapting the app to your specific domain (e.g., to control smart lock or lights). The app uses the [Nabto Cordova Plugin](https://github.com/nabto/cordova-plugin-nabto) and adds a simpler to use TypeScript and Promise based wrapper (`./src/app/nabto.service.ts`).
+The product specific customization takes place through `./src/pages/mjpg-player` (in the near future a more advanced player component will be added). The app uses the [Nabto Cordova Plugin](https://github.com/nabto/cordova-plugin-nabto) and adds a simpler to use TypeScript and Promise based wrapper (`./src/app/nabto.service.ts`).
 
-To try the app, follow the instructions below.
-
-To setup a stub device to interact with (and to use as basis for your own device integration), build and run the [AppMyProduct Heat Control stub](https://github.com/nabto/appmyproduct-device-stub). To enable the device for remote access, this requires an [AppMyProduct account](https://www.appmyproduct.com).
+To try the app, a video source is need - for instance, follow [this tutorial](http://www.instructables.com/id/Raspberry-Pi-remote-webcam/) to setup a webcam on an RPI. Next, install a uNabto Tunnel on the device - this is outlined in [TEN030 Nabto Tunnels](https://www.nabto.com/downloads/docs/TEN030%20Nabto%20Tunnels.pdf). A more easily accessible blog post describing all necessary steps will soon be published on our blog.
 
 # Ionic note
 
@@ -32,7 +36,7 @@ On a typical developer workstation, an app can be built with the following steps
 
 ```console
 
-git clone https://github.com/nabto/ionic-starter-nabto.git
+git clone https://github.com/nabto/ionic-starter-nabto-video.git
 
 sudo ./scripts/ios-install.sh
 ./scripts/ios-build.sh
