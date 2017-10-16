@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{device.name}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (tap)="home()">
+        <ion-icon name="home" color="secondary"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- player ("player") -->
+  <div align="center">
+    <img src="{{url}}" />
+  </div>
+
+  <!-- refresh and config buttons -->
+  <button block ion-button icon-end (tap)="showSettingsPage()" color="light">
+    Settings
+    <ion-icon name="cog"></ion-icon>
+  </button>
+
+</ion-content>
+
