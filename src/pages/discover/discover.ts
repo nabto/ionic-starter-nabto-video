@@ -1,28 +1,28 @@
 import { Component } from '@angular/core';
-import { NgZone } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
-import { PairingPage } from '../pairing/pairing';
 import { AlertController } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { NabtoService } from '../../app/nabto.service';
 import { NabtoDevice } from '../../app/device.class';
 import { Bookmark, BookmarksService } from '../../app/bookmarks.service';
-import { VendorHeatingPage } from '../vendor-heating/vendor-heating';
+import { Subject } from 'rxjs/Subject';
+import { Customization } from '../../app/customization.class';
 
+@IonicPage()
 @Component({
   selector: 'page-discover',
   templateUrl: 'discover.html'
 })
 export class DiscoverPage {
-  empty: boolean;
   busy: boolean;
   longTitle: string;
   shortTitle: string;
   view : ViewController;
   
   public devices: Observable<NabtoDevice[]>;
+  public deviceInfoSource: Subject<NabtoDevice[]>;
   private recentIds: string[];
 
   ionViewDidEnter() {
@@ -36,8 +36,7 @@ export class DiscoverPage {
               private alertCtrl: AlertController,
               public platform: Platform,
               private nabtoService: NabtoService,
-              private bookmarksService: BookmarksService,
-              private zone: NgZone
+              private bookmarksService: BookmarksService
              ) {
     this.longTitle = navParams.get('longTitle');
     if (!this.longTitle) {
@@ -49,6 +48,11 @@ export class DiscoverPage {
     }
     document.addEventListener('resume', () => {
       this.onResume();
+    });
+    this.deviceInfoSource = new Subject<NabtoDevice[]>();
+    this.devices = this.deviceInfoSource.asObservable();
+    this.devices.subscribe((next) => {
+      console.log("Got devices for discover: " + JSON.stringify(next));
     });
   }
 
@@ -69,19 +73,14 @@ export class DiscoverPage {
     this.busy = true;
     this.nabtoService.discover().then((ids: string[]) => {
       this.busy = false;
-      this.empty = ids.length == 0;
       this.nabtoService.prepareInvoke(ids).then(() => {
         // listview observes this.devices and will be populated as data is received 
-        this.devices = this.nabtoService.getPublicInfo(ids.map((id) => new Bookmark(id)));
-        this.devices.subscribe((next) => {
-          console.log("Got device for discover: " + JSON.stringify(next));
-        });
+        this.nabtoService.getPublicInfo(ids.map((id) => new Bookmark(id)), this.deviceInfoSource);
         this.recentIds = ids;
       });
     }).catch((error) => {
       this.showToast(error.message);
       console.error("Error discovering devices: " + JSON.stringify(error));
-      this.empty = true;
       this.busy = false;
     });
   }
@@ -98,17 +97,17 @@ export class DiscoverPage {
   
   itemTapped(event, device) {
     if (!device.reachable) {
-      this.showToast(device.product);
+      this.showToast(device.description);
       return;
     }
     if (device.openForPairing) {
-      if (device.currentUserIsOwner) {
+      if (device.currentUserIsPaired) {
         this.handleAlreadyPairedDevice(device);
       } else {
         this.handleUnpairedDevice(device);
       }
     } else {
-      if (device.currentUserIsOwner) {
+      if (device.currentUserIsPaired) {
         this.handleAlreadyPairedDevice(device);
       } else {
         this.handleClosedDevice();
@@ -129,13 +128,13 @@ export class DiscoverPage {
     toast.present();
     // if the user has deleted bookmark, add again
     this.bookmarksService.addBookmarkFromDevice(device);
-    this.navCtrl.push(VendorHeatingPage, { // XXX don't depend directly on vendor page here
+    this.navCtrl.push(Customization.vendorPage, { 
       device: device
     });
   }
 
   handleUnpairedDevice(device: NabtoDevice) {
-    this.navCtrl.push(PairingPage, {
+    this.navCtrl.push('PairingPage', {
       device: device,
       shortTitle: "Pair device",
       longTitle: "Pair local device"

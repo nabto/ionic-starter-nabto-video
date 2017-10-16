@@ -58,6 +58,7 @@ export class NabtoDevice {
   public id: string;
   public name: string;
   public product: string;
+  public description: string;
   public iconUrl: string;
   public openForPairing: boolean = false;
   public remoteAccessEnabled: boolean = false;
@@ -71,6 +72,7 @@ export class NabtoDevice {
               id: string,
               product: string,
               iconUrl: string,
+              description: string,
               openForPairing: boolean,
               currentUserIsPaired: boolean,
               currentUserIsOwner: boolean,
@@ -80,6 +82,7 @@ export class NabtoDevice {
     this.name = name;
     this.id = id;
     this.product = product;
+    this.description = description;
     if (iconUrl) {
       this.iconUrl = iconUrl;
     } else {
@@ -96,6 +99,16 @@ export class NabtoDevice {
     } else {
       return "lock";
     }
+  }
+
+  setUnsupported() {
+    this.description = `${this.product} unsupported by this app`;
+    this.reachable = false;
+    this.iconUrl = "img/unknown.png";
+  }
+
+  setDescription(desc: string) {
+    this.description = desc;
   }
 
   setOffline() {

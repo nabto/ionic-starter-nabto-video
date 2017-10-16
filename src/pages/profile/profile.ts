@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { NabtoService } from '../../app/nabto.service';
 import { ProfileService } from '../../app/profile.service';
-import { ToastController, Nav, ViewController } from 'ionic-angular';
+import { ToastController, NavController, ViewController } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 
 declare var cordova;
 declare var NabtoError;
 
+@IonicPage()
 @Component({
   selector: 'page-profile',
   templateUrl: 'profile.html'
@@ -20,7 +21,7 @@ export class ProfilePage {
               private profileService: ProfileService,
               public toastCtrl: ToastController,
               private nabtoService: NabtoService,
-              private nav: Nav,
+              private nav: NavController,
               private platform: Platform
              )   
   {
