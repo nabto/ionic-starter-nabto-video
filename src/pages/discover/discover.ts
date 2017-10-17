@@ -57,7 +57,7 @@ export class DiscoverPage {
   }
 
   badImage(device: NabtoDevice) {
-    device.iconUrl = "img/unknown.png";
+    device.setUnknownIcon();
   }
 
   onResume() {
