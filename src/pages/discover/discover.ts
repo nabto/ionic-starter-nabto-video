@@ -57,8 +57,6 @@ export class DiscoverPage {
   }
 
   badImage(device: NabtoDevice) {
-    device.product = "Product type unsupported by this app";
-    device.reachable = false;
     device.iconUrl = "img/unknown.png";
   }
 
