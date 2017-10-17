@@ -13,7 +13,15 @@
 
   <!-- player ("player") -->
   <div align="center">
-    <img src="{{url}}" />
+    <img [hidden]="!videoIsOk" src="{{url}}" (error)="badImage()" (load)="goodImage()"/>
+    <ion-card [hidden]="videoIsOk">
+      <ion-card-header>
+        Cannot show video
+      </ion-card-header>
+      <ion-card-content>
+        Make sure the tunnel device is configured correctly, including that it allows connections to port {{remotePort}}.
+      </ion-card-content>
+    </ion-card>
   </div>
 
   <!-- refresh and config buttons -->

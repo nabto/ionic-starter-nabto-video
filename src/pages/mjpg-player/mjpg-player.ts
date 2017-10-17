@@ -19,6 +19,8 @@ export class MjpgPlayerPage {
   spinner: any;
   url: string;
   tunnel: string;
+  remotePort: number = 8081;
+  videoIsOk: boolean = false;
 
   constructor(private navCtrl: NavController,
               private nabtoService: NabtoService,
@@ -44,10 +46,11 @@ export class MjpgPlayerPage {
   }
 
   showStream() {
-    this.nabtoService.openTunnel(this.device.id, 8081)
+    this.nabtoService.openTunnel(this.device.id, this.remotePort)
       .then((res: any) => {
         console.log(`Tunnel ${res.tunnelId} connected, portnum is ${res.localPort}, state is ${res.state}`);
         this.tunnel = res.tunnelId;
+        this.videoIsOk = true;
         this.url = `http://127.0.0.1:${res.localPort}/`;
       }).catch(error => {
         this.showToast(error.message);
@@ -71,6 +74,14 @@ export class MjpgPlayerPage {
     });
   }
 
+  badImage() {
+    this.videoIsOk = false;
+  }
+
+  goodImage() {
+    this.videoIsOk = true;
+  }
+  
   home() {
     this.navCtrl.popToRoot();
   }
