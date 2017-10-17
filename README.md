@@ -1,3 +1,7 @@
+# Note: Repository changed!
+
+We have changed this repository to be a fork of the general starter app to make it simpler to manage specific derived apps like this video app (more details to follow). The previous AMP Video repo has been renamed to "ionic-starter-nabto-video-deprecated".
+
 # Ionic Starter for Nabto IoT / AppMyProduct Video Apps
 
 This [Ionic](http://ionicframework.com) Starter demonstrates how to use [AppMyProduct](https://www.appmyproduct.com) for building a video player app. It contains everything to build a production ready IoT app to remote control your own product:
