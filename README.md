@@ -1,6 +1,6 @@
 # Note: Repository changed!
 
-We have changed this repository to be a fork of the [general starter app](https://github.com/nabto/ionic-starter-nabto) to make it simpler to manage specific derived apps like this video app (more details to follow). The previous AMP Video repo has been renamed to "ionic-starter-nabto-video-deprecated".
+We have changed this repository to be a fork of the [general starter app](https://github.com/nabto/ionic-starter-nabto) to make it simpler to manage specific derived apps like this video app (see section Customization below). The previous AMP Video repo has been renamed to "ionic-starter-nabto-video-deprecated".
 
 # Ionic Starter for Nabto IoT / AppMyProduct Video Apps
 
