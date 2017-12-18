@@ -118,7 +118,7 @@ Note that for the last step, an Android emulator image must have been configured
 2. Android Studio must be installed and an emulator device configured 
 3. install cordova: `sudo npm install cordova -g`
 4. install ionic: `sudo npm install ionic -g`
-5. add the Android Cordova platform : `ionic platform add android@latest`
+5. add the Android Cordova platform : `ionic cordova platform add android@latest`
 
 Note that at least version 6.1.1 of cordova-android is necessary as indicated if using Android 7 or newer (otherwise you will see an app signing error).
 
@@ -358,7 +358,7 @@ Click the project name in the left pane ("AMP Heat" per default) and the corresp
 Use at least Android 6.1.1 when deploying for Android 7+:
 
 ```ShellSession
-ionic platform add android@6.1.1
+ionic cordova platform add android@6.1.1
 ```
 ### Android license not accepted
 If you have Android Studio installed, open the sdk manager from Tools->Android->SDK manager and accept licenses as needed. If you only have the Android command line sdk installed, update the SDK manually with:
