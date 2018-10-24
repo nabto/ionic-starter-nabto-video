@@ -1,74 +1,74 @@
 {
-    "name": "ionic-starter-nabto",
-    "author": "Nabto ApS",
-    "homepage": "https://www.nabto.com",
-    "private": true,
-    "scripts": {
-        "ionic:build": "ionic-app-scripts build",
-        "ionic:serve": "ionic-app-scripts serve"
-    },
-    "dependencies": {
-        "@angular/common": "4.4.3",
-        "@angular/compiler": "4.4.3",
-        "@angular/compiler-cli": "4.4.3",
-        "@angular/core": "4.4.3",
-        "@angular/forms": "4.4.3",
-        "@angular/http": "4.4.3",
-        "@angular/platform-browser": "4.4.3",
-        "@angular/platform-browser-dynamic": "4.4.3",
-        "@ionic-native/core": "4.3.0",
-        "@ionic-native/splash-screen": "4.3.0",
-        "@ionic-native/status-bar": "4.3.0",
-        "@ionic/storage": "2.0.1",
-        "cordova-android": "^6.3.0",
-        "cordova-custom-config": "^3.3.0",
-        "cordova-ios": "^4.5.2",
-        "cordova-plugin-console": "^1.1.0",
-        "cordova-plugin-device": "^1.1.6",
-        "cordova-plugin-device-name": "^1.3.0",
-        "cordova-plugin-nabto": "^2.4.2",
-        "cordova-plugin-splashscreen": "^4.0.3",
-        "cordova-plugin-statusbar": "^2.2.3",
-        "cordova-plugin-whitelist": "^1.3.2",
-        "cordova-plugin-wkwebview-engine": "git+https://github.com/ionic-team/cordova-plugin-wkwebview-engine.git",
-        "cordova-sqlite-storage": "^2.0.4",
-        "ionic-angular": "^3.7.1-201710241735",
-        "ionicons": "3.0.0",
-        "rxjs": "5.4.3",
-        "sw-toolbox": "3.6.0",
-        "zone.js": "0.8.18"
-    },
-    "devDependencies": {
-        "@ionic/app-scripts": "3.0.0",
-        "ionic": "3.15.1",
-        "typescript": "2.3.4"
-    },
-    "cordovaPlugins": [],
-    "cordovaPlatforms": [
-        "ios",
-        {
-            "platform": "ios",
-            "version": "",
-            "locator": "ios"
-        }
-    ],
-    "description": "ionic-starter-nabto: An Ionic project",
-    "cordova": {
-        "plugins": {
-            "cordova-plugin-splashscreen": {},
-            "cordova-plugin-statusbar": {},
-            "cordova-custom-config": {},
-            "cordova-plugin-console": {},
-            "cordova-plugin-device": {},
-            "cordova-plugin-device-name": {},
-            "cordova-plugin-whitelist": {},
-            "cordova-sqlite-storage": {},
-            "cordova-plugin-wkwebview-engine": {},
-            "cordova-plugin-nabto": {}
-        },
-        "platforms": [
-            "android",
-            "ios"
-        ]
+  "name": "ionic-starter-nabto",
+  "author": "Nabto ApS",
+  "homepage": "https://www.nabto.com",
+  "private": true,
+  "scripts": {
+    "ionic:build": "ionic-app-scripts build",
+    "ionic:serve": "ionic-app-scripts serve"
+  },
+  "dependencies": {
+    "@angular/common": "4.4.3",
+    "@angular/compiler": "4.4.3",
+    "@angular/compiler-cli": "4.4.3",
+    "@angular/core": "4.4.3",
+    "@angular/forms": "4.4.3",
+    "@angular/http": "4.4.3",
+    "@angular/platform-browser": "4.4.3",
+    "@angular/platform-browser-dynamic": "4.4.3",
+    "@ionic-native/core": "4.3.0",
+    "@ionic-native/splash-screen": "4.3.0",
+    "@ionic-native/status-bar": "4.3.0",
+    "@ionic/storage": "2.0.1",
+    "cordova-android": "^7.1.1",
+    "cordova-custom-config": "^5.0.2",
+    "cordova-ios": "4.5.5",
+    "cordova-plugin-console": "^1.1.0",
+    "cordova-plugin-device": "^1.1.7",
+    "cordova-plugin-device-name": "^1.3.4",
+    "cordova-plugin-nabto": "^2.5.1",
+    "cordova-plugin-splashscreen": "^4.1.0",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-plugin-wkwebview-engine": "git+https://github.com/ionic-team/cordova-plugin-wkwebview-engine.git",
+    "cordova-sqlite-storage": "^2.5.0",
+    "ionic-angular": "^3.9.2",
+    "ionicons": "3.0.0",
+    "rxjs": "5.4.3",
+    "sw-toolbox": "3.6.0",
+    "zone.js": "0.8.18"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "^3.2.0",
+    "ionic": "3.15.1",
+    "typescript": "2.3.4"
+  },
+  "cordovaPlugins": [],
+  "cordovaPlatforms": [
+    "ios",
+    {
+      "platform": "ios",
+      "version": "",
+      "locator": "ios"
     }
+  ],
+  "description": "ionic-starter-nabto: An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-custom-config": {},
+      "cordova-plugin-console": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-device-name": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-sqlite-storage": {},
+      "cordova-plugin-wkwebview-engine": {},
+      "cordova-plugin-nabto": {}
+    },
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  }
 }
