@@ -1,0 +1,4 @@
+git_url "git@github.com:nabto/app-certs.git"
+type "appstore"
+app_identifier ["com.appmyproduct.video"]
+username "apps@nabto.com"

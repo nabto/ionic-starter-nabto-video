@@ -34,3 +34,7 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 garbage
 .sourcemaps
+*.cer
+*.ipa
+*.zip
+*.mobileprovision

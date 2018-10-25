@@ -1,12 +1,14 @@
-{
-    "ios": {
-        "debug": {
-            "developmentTeam": "E55K8RCV2E"
-        },
-        "release": {
-		    "codeSignIdentity": "iPhone Distribution",
-		    "developmentTeam": "E55K8RCV2E",
-		    "packageType": "app-store"
-		}
-	    }
-	}
+"ios": {
+    "debug": {
+        "codeSignIdentitiy": "iPhone Developer",
+        "developmentTeam":"E55K8RCV2E",
+        "packageType": "developer"
+    },
+    "release": {
+        "codeSignIdentitiy": "iPhone Distribution",
+        "developmentTeam":"E55K8RCV2E",
+        "provisioningProfile": "match AppStore com.appmyproduct.video",
+        "packageType": "app-store"
+    }
+}
+
