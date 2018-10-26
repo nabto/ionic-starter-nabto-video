@@ -38,3 +38,4 @@ garbage
 *.ipa
 *.zip
 *.mobileprovision
+fastlane/report.xml

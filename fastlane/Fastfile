@@ -20,6 +20,10 @@ platform :ios do
     build_json = {
       "ios": {
         "release": {
+          "buildFlag": [
+            # cordova does not support xcode10 as of October 2018
+            "-UseModernBuildSystem=0"
+          ],
           "codeSignIdentity": "iPhone Distribution",
           "provisioningProfile": "#{profile_uuid}",
           "packageType": "app-store",
