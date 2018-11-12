@@ -1,7 +1,4 @@
-app_identifier "com.appmyproduct.video" # The bundle identifier of your app
-apple_id "apps@nabto.com" # Your Apple email address
+app_identifier ENV["APP_IDENTIFIER"] 
+apple_id ENV["FASTLANE_USER"]
+team_id ENV["FASTLANE_TEAM_ID"]
 
-team_id "E55K8RCV2E" # Developer Portal Team ID
-
-# you can even provide different app identifiers, Apple IDs and team names per lane:
-# More information: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md

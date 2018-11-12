@@ -1,4 +1,4 @@
-git_url "git@github.com:nabto/app-certs.git"
+git_url ENV["MATCH_GIT_URL"]
 type "appstore"
-app_identifier ["com.appmyproduct.video"]
-username "apps@nabto.com"
+app_identifier [ENV["APP_IDENTIFIER"]]
+username ENV["FASTLANE_USER"]
