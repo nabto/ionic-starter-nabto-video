@@ -26,7 +26,7 @@ You can try a pre-built version of the app for iOS and Android, search for "AppM
 
 The product specific customization takes place through `./src/pages/mjpg-player` (in the near future a more advanced player component will be added). The app uses the [Nabto Cordova Plugin](https://github.com/nabto/cordova-plugin-nabto) and adds a simpler to use TypeScript and Promise based wrapper (`./src/app/nabto.service.ts`).
 
-To try the app, a video source is need - for instance, follow [this tutorial](http://www.instructables.com/id/Raspberry-Pi-remote-webcam/) to setup a webcam on an RPI. Next, install a uNabto Tunnel on the device - this is outlined in [TEN030 Nabto Tunnels](https://www.nabto.com/downloads/docs/TEN030%20Nabto%20Tunnels.pdf). A more easily accessible blog post describing all necessary steps will soon be published on our blog.
+To try the app, a video source is need - for instance, follow [this blog post](https://www.nabto.com/secure-app-access-to-raspberry-pi-camera/).
 
 # iOS
 
