@@ -34,8 +34,26 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 garbage
 .sourcemaps
+
 *.cer
 *.ipa
 *.zip
 *.mobileprovision
+
+
+# fastlane specific
 fastlane/report.xml
+
+# deliver temporary files
+fastlane/Preview.html
+
+# snapshot generated screenshots
+fastlane/screenshots
+
+# scan temporary files
+fastlane/test_output
+
+resources/ios/
+resources/android/
+
+!resources/ios/icon-1024.png

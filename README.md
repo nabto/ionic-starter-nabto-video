@@ -98,6 +98,8 @@ The first time the app is attempted to be run, an error is observed about develo
 
 Subsequently, the run command above can be used.
 
+Note! If using Xcode 10, see the troubleshooting guide below if build or run fails.
+
 # Android
 
 ## Quick start
@@ -231,7 +233,12 @@ Implemented for instance as:
         if (!unabto_query_write_uint16(query_response, device_interface_version_major_)) return AER_REQ_RSP_TOO_LARGE;
         if (!unabto_query_write_uint16(query_response, device_interface_version_minor_)) return AER_REQ_RSP_TOO_LARGE;
         return AER_REQ_RESPONSE_READY;
-```        
+```
+
+As mentioned above, `device_interface_id_` and `device_interface_version_major_` must match exactly
+what is expected by the client to allow the client to invoke the device. The minor version
+`device_interface_version_minor_` must be at least the version expected by the client.
+
 
 ## Icons and graphics
 
@@ -251,6 +258,19 @@ See the [Ionic documentation](https://ionicframework.com/docs/cli/cordova/resour
 # Troubleshooting
 
 ## General
+
+### App crashes
+
+If you obtain crash reports where you can see Nabto is active during a crash, it is tempting to
+focus all efforts towards debugging some Nabto related aspect of the app. However, due to background
+processing in the Nabto SDK, you will often see traces of Nabto in crash reports - even if Nabto
+does not play a role in causing the crash. So a good first attempt is to disable the Nabto plugin if
+possible and see if this affects the app crash.
+
+If not possible to disable Nabto or if it does not help, try to simplify the app complexity and
+e.g. remove other plugins to the extent possible. Ideally when you need assistance from Nabto
+support, see if you can reproduce your problem with as few as possible modifications to the standard
+Nabto apps and include or reference a repo with such a simple modified app in your error report.
 
 ### Blank screen stuck at app startup
 
@@ -305,6 +325,18 @@ ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
 ## iOS
+
+### Xcode 10 build problems
+
+If using Xcode 10, there is currently a problem with Ionic/Cordova so try using the legacy build
+option if the instructions above and/or the scripts in the `scripts` folder fails:
+
+```
+cordova run ios --buildFlag='-UseModernBuildSystem=0' --target iPad-Air-2
+```
+
+Note that Cordova is invoked directly with this command to pass in the build flag option, unknown how this is done using the Ionic cli.
+
 
 ### Linker error
 
