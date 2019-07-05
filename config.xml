@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.appmyproduct.video" ios-CFBundleVersion="0" version="2.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.appmyproduct.video" ios-CFBundleVersion="0" version="2.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>AMPVideo</name>
     <description>AppMyProduct video app</description>
     <author email="support@appmyproduct.com" href="https://www.appmyproduct.com/">AppMyProduct Team</author>
@@ -110,4 +110,7 @@
         <variable name="CAMERA_USAGE_DESCRIPTION" value="Scan QR code to add user to device access control list" />
     </plugin>
     <plugin name="cordova-plugin-nabto" spec="2.5.1" />
+    <allow-navigation href="http://192.168.1.10:8100" sessionid="17088f1e" />
+    <engine name="android" spec="7.1.4" />
+    <engine name="ios" spec="5.0.1" />
 </widget>
