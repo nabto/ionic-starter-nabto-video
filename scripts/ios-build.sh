@@ -23,6 +23,7 @@ if [ -e platforms/ios/cordova ]; then
   # fix linker problem when using Nabto lib
   echo 'OTHER_LDFLAGS = -force_load $(BUILT_PRODUCTS_DIR)/libCordova.a -lstdc++' >> platforms/ios/cordova/build.xcconfig
 
+  # if you get an error about missing a development team, add the following: "-- --developmentTeam=<team id>"
   ionic cordova build ios
 
 fi
