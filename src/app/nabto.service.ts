@@ -189,7 +189,11 @@ export class NabtoService {
             }
           }
         });
-      });
+      })
+        .catch((err) => {
+          console.log(`startup or createkeypair failed: ${err}`);
+          return Promise.reject(err);
+        });
     });
   }
 
@@ -547,6 +551,21 @@ export class NabtoService {
   }
 
   public openTunnel(host: string, remotePort: number): Promise<any> {
+    if (this.initialized) {
+      return this.doOpenTunnel(host, remotePort);
+    } else {
+      return this.startupAndOpenProfile()
+        .then(() => {
+          return this.doOpenTunnel(host, remotePort);
+        })
+        .catch((err) => {
+          console.log(`startup or opentunnel failed: ${err}`);
+          return Promise.reject(err);
+        });
+    }
+  }
+
+  public doOpenTunnel(host: string, remotePort: number): Promise<any> {
     return new Promise((resolve, reject) => {
       try {
         nabto.tunnelOpenTcp(host, remotePort, (err, tunnel) => {
