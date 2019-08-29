@@ -1,0 +1,12 @@
+APP_IDENTIFIER=com.appmyproduct.heat
+APP_NAME=AMPHeat
+
+FASTLANE_TEAM_ID=<insert your apple assigned team id>
+FASTLANE_USER=<insert your app store connect email address>
+MATCH_GIT_URL=<insert your match git url>
+
+GYM_PROJECT=platforms/ios/{$APP_NAME}.xcodeproj
+GYM_SCHEME={$APP_NAME}
+PRODUCE_APP_IDENTIFIER={$APP_IDENTIFIER}
+CERT_APP_IDENTIFIER=${APP_IDENTIFIER}
+SIGH_APP_IDENTIFIER=${APP_IDENTIFIER}
