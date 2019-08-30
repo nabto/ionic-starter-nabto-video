@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.appmyproduct.video" ios-CFBundleVersion="0" version="2.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.appmyproduct.video" ios-CFBundleVersion="0" version="2.1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>AMPVideo</name>
     <description>AppMyProduct video app</description>
-<author email="support@appmyproduct.com" href="https://www.appmyproduct.com/">AppMyProduct Team</author>
+    <author email="support@appmyproduct.com" href="https://www.appmyproduct.com/">AppMyProduct Team</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -31,6 +31,12 @@
         <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
+        <splash density="ldpi" src="resources/android/splash/drawable-port-ldpi-screen.png" />
+        <splash density="mdpi" src="resources/android/splash/drawable-port-mdpi-screen.png" />
+        <splash density="hdpi" src="resources/android/splash/drawable-port-hdpi-screen.png" />
+        <splash density="xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
+        <splash density="xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
+        <splash density="xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -111,7 +117,6 @@
     </plugin>
     <plugin name="cordova-plugin-nabto" spec="^2.6.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="~4.1.1" />
+    <engine name="ios" spec="^5.0.1" />
     <engine name="android" spec="^8.0.0" />
-    <engine name="ios" spec="5.0.1" />
-    <plugin name="cordova-plugin-nabto" spec="2.6.1" />
 </widget>
