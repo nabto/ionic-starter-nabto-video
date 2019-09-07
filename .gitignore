@@ -48,3 +48,6 @@ fastlane/test_output
 
 #resources/ios/
 #resources/android/
+
+fastlane/README.md
+
