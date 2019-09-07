@@ -15,29 +15,39 @@ Install _fastlane_ using
 or alternatively using `brew cask install fastlane`
 
 # Available Actions
-### cordova_build
+## iOS
+### ios install
 ```
-fastlane cordova_build
+fastlane ios install
 ```
-
-### build
+Build debug version and install on connected device
+### ios beta
 ```
-fastlane build
+fastlane ios beta
 ```
-
-### version
+Build release version and upload to testflight
+### ios build_release
 ```
-fastlane version
-```
-
-### beta
-```
-fastlane beta
+fastlane ios build_release
 ```
 
-### release
+### ios update_generated_project
 ```
-fastlane release
+fastlane ios update_generated_project
+```
+
+
+----
+
+## Android
+### android beta
+```
+fastlane android beta
+```
+
+### android build_sign
+```
+fastlane android build_sign
 ```
 
 
